@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{mathrsfs}
+\DeclareMathOperator{\sech}{sech}
+
+\title{\vspace{-2cm}\large \raggedright Kniff's Integration Kompetition ----------------------------------------------- 2024}
+\date{\vspace{-2cm}} % Removed the date
+\begin{document}
+\maketitle
+\pagestyle{plain}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\begin{enumerate}
+    \item {\Large \( \displaystyle \int \frac{\tan(\frac{x}{4})}{\sec(\frac{x}{2})} \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int \frac{x^{2}}{\sqrt{x^2-1}} \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int_0^{e^{\pi}} \sin^2({\frac{\pi}{4}+\log{x}}) \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int_0^{100} \lfloor x \rfloor^2\pmod {\lceil x \rceil^2} \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int_0^{\infty} \frac{\cosh^{-1} x}{(1+x^2)(\sech^{-1} x + \cosh^{-1} x)} \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int \frac{\sin x}{\cot x} \cdot \frac{\tan x}{\cos x}  \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int \frac{\tan x}{\cos x} \cdot \frac{\sec x}{\sin x}  \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int_0^{\infty} \int_{\lfloor y \rfloor}^{\lceil y \rceil} \frac{dx dy}{x^4(y^2 + 1)} \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \lim_{n\to{2024}} \int_0^\infty x^{n-1}e^{-x^n}\, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int_0^{\alpha} \sqrt{\frac{(\alpha\beta)^2-(x\beta)^2}{\alpha^2}} \, dx \quad \alpha,\beta \in\mathbb{R} \)}
+\end{enumerate}
+
+\newpage
+
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item {\Large \( \displaystyle \int \frac{3x^4-4x^2+5}{x^6\sqrt{x^4-x^2+1}} \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \sum_{n=0}^4 \int (-1)^n\sec^{2n} (x) \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \lim_{n\to0}\frac{1}{n^2}\int_0^{n^2} \frac{\sin{(x^x)}}{x^x} \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int_0^{\frac{\pi}4} \sqrt{\frac{2\csc{(2x)}}{2\cos^2{x}-\sin{(2x)}}} \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int_0^{\infty} e^{-x^{1/5}} \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int_0^{\frac{\pi}{2}} \sin^8 x \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int_1^{\infty} \frac{x - \lfloor x \rfloor}{x^5} \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int \frac{9\cos x - 7\sin x}{3\sin x + 4\cos x } \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \int_0^{\frac{\pi}{1012}} \cos^{2024}{(2024x)} \, dx \)}
+    \vspace{.5cm}
+    \item {\Large \( \displaystyle \sum_{n=0}^{\infty}\int \sin^{2n+1} (x) \, dx \)}
+\end{enumerate}
+\large Bonus Question: Define \(\phi_n(f(\alpha))\) as an \(n \times n\) determinant with all entries \(i\times j = x^{f(\alpha)}\) for \(\alpha = 1,2,3,\dotsc,n^2.\) i.e. 
+\[\phi_3(\alpha) = \begin{vmatrix} x & x^2 & x^3 \\x^4 & x^5 & x^6 \\ x^7 & x^8 & x^9 \\ 
+\end{vmatrix}\]
+and
+\[\phi_2(\alpha^2) = \begin{vmatrix} x & x^4 \\x^9 & x^{16} \\ 
+\end{vmatrix}\]
+i) Find \large \(\displaystyle \int_0^{\infty} \phi_3(2^{\alpha})e^{-x} \, dx \).
+
+ii) Find \large \(\displaystyle \int_0^{2\pi} \max{(\phi_4(\pi\alpha),\phi_2(\sin{(\alpha)})} \, dx\).
+
+iii) Consider any square matrix \(M_{n \times n}\) as a polynomial with common ratio \(r\), i.e. \(\phi_2(\alpha) = x + x^2 + x^3 + x^4\), where \(r = x\). Also consider vector space \(V = \{M\in\mathbb{R}^{n\times n}|M_{n \times n} = rx+r^2x+\dotsc+r^{n^2}x\)\}. Using Lagrange's notation for anti-derivatives: \(f^{-1}(t) = \int f(t) \, dt\), find a function \(\delta\) s.t. \large \(\phi_{\beta}(\delta^{(-\alpha)} (x))\) is a subspace of \(V, \forall\beta \in \mathbb{N}\), or prove one doesn't exist.
+
+\end{document}
