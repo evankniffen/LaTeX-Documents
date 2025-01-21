@@ -1,0 +1,106 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{mathrsfs}
+\usepackage{mathdots}
+\DeclareMathOperator{\sech}{sech}
+\date{\vspace{-2cm}} % Removed the date
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage{silence}
+\WarningsOff*
+\ErrorsOff*
+\begin{document}
+\pagestyle{plain}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\newcommand{\resumeSubheading}[6]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+       #3 & #4\\
+      #5 & #6 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\resumeSubheading{HW 1: Descriptive Statistics and Measurement Error}{Evan Kniffen}{19 January 2025}{435003600}{Total Pages: 2}{ENGR 216 - 525}
+\\
+\\
+\\
+\textbf{Problem 1:}
+
+\textbf{Given:} \linebreak
+Concrete\_Data.xlsx: An Excel sheet with 1031 inputted rows of concrete data, with measurements from which we will be calculating our statistics. The file Concrete\_Data.xlsx contains data that was collected through
+research by I-Cheng Yeh [1].
+
+\textbf{Find:}\linebreak
+a) The mean, median, and mode of the fly ash component. \\
+b) The range, variance, and standard deviation of the coarse aggregate component.\\
+c) The mean and standard error of the cement component.\\
+d) The mean and standard error of the age.
+
+\textbf{Diagram:}\linebreak
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.25\linewidth]{640px-Bloczek_betonowy.jpg}
+    \caption{Concrete [2]}
+\end{figure}
+
+\textbf{Theory:}\linebreak
+Population Variance: \(\displaystyle\sigma^2 = \frac1n\sum_{i=1}^n(x_i-\mu)^2\)
+
+Population Standard Deviation = \(\sqrt{\sigma^2} = \sigma = \sqrt{\displaystyle \frac1n\sum_{i=1}^n(x_i-\mu)^2}\)
+
+Standard Error=\(\frac{\sigma}{\sqrt{n}}\)
+
+\textbf{Assumptions:}\linebreak
+We can assume that the population equations are applicable given the large sample size. 
+
+\textbf{Solutions:} \emph{Below each numerical solution set is the Excel code used in Concrete\_Data.xlsx to obtain that solution respectively.}\\
+\textbf{a)} Fly Ash Component:\\
+Mean: \framebox{54.19 \(\text{kg}\)/\(\text{m}^3\)}\\
+Median: \framebox{0.0 \(\text{kg}\)/\(\text{m}^3\)}\\
+Mode: \framebox{0.0 \(\text{kg}\)/\(\text{m}^3\)}\\
+\texttt{=AVERAGE(C2:C1031)}\\
+\texttt{=MEDIAN(C2:C1031)}\\
+\texttt{=MODE.SNGL(C2:C1031)}
+
+\textbf{b)} Coarse Aggregate Component:\\
+Range: \framebox{344.0 \(\text{kg}\)/\(\text{m}^3\)}\\
+Variance: \framebox{6045.66 \(\text{kg}^2\)/\(\text{m}^6\)}\\
+Standard Deviation: \framebox{77.75 \(\text{kg}\)/\(\text{m}^3\)}\\
+\texttt{=MAX(F2:F1031) - MIN(F2:F1031)}\\
+\texttt{=VAR.S(F2:F1031)}\\
+\texttt{=STDEV.S(F2:F1031)}
+
+\textbf{c)} Cement Component:\\
+Mean: \framebox{281.17 \(\text{kg}\)/\(\text{m}^3\)}\\
+Standard Error: \framebox{3.26 \(\text{kg}\)/\(\text{m}^3\)}\\
+\texttt{=AVERAGE(A2:A1031)}\\
+\texttt{=STDEV.S(A2:A1031) / SQRT(COUNT(A2:A1031))}
+
+\textbf{d)} Age:\\
+Mean: \framebox{45.66 days}\\
+Standard Error: \framebox{1.97 days}\\
+\texttt{=AVERAGE(H2:H1031)}\\
+\texttt{=STDEV.S(H2:H1031) / SQRT(COUNT(H2:H1031))}
+
+These solutions all make sense given a quick look at the trends within the Excel sheet; most of the columns with a significant amount of zeroes have a mode and/or median of zero (this is true for more than just our Part A calculation). Furthermore, the age of each sample has generally lower values when compared to the trends seen in the other columns, leading to a lower mean. 
+
+[1] I-Cheng Yeh, “Modeling of strength of high performance concrete using artificial neural networks,”
+Cement and Concrete Research, Vol. 28, No. 12, pp. 1797-1808 (1998).
+
+[2] Ablazejo, "Bloczek betonowy," Wikimedia Commons, February 14, 2014.
+
+\end{document}
